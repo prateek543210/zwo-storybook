@@ -49,4 +49,5 @@ Button.defaultProps = {
   primary: false,
   // size: "medium",
   onClick: undefined,
+  label:"Button"
 };

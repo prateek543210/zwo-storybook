@@ -1,0 +1,259 @@
+@mixin flexBox($display, $flexDirection, $justifyContent) {
+  display: $display;
+  flex-direction: $flexDirection;
+  justify-content: $justifyContent;
+}
+@mixin dashboardButton() {
+  border: 2px solid $dash_btn_border_color;
+  margin-right: 3% !important;
+  color: $dash_btn_color;
+  font-family: TheSans-Regular;
+  border-radius: 5px;
+  opacity: 1;
+  height: 100%;
+  width: 20%;
+  font-size: 0.8vw;
+  &:disabled {
+    background-color: $number_Plate_asdrn_button;
+  }
+}
+@mixin rounded($border) {
+	-webkit-border-radius: $border;
+	-moz-border-radius: $border;
+	border-radius: $border;
+}
+@mixin box-shadow($top, $left, $blur, $size, $color) {
+  -webkit-box-shadow: $top $left $blur $size $color;
+  -moz-box-shadow: $top $left $blur $size $color;
+  box-shadow: $top $left $blur $size $color;
+}
+@mixin border($borderColor) {
+  border: solid 2px $borderColor;
+  &:hover {
+    border-color:$borderColor; 
+  }
+}
+@mixin button-bg($bg,$hoverBg) {
+  background: $bg;
+  transition: all 0.3s ease;
+  &:hover {
+    background:$hoverBg; 
+  }
+}
+@mixin button {
+  display: inline-block;
+  padding: .53vw .79vw;
+  text-align: center;
+  text-decoration: none;
+  font-size: .94vw;
+  text-align: center;
+  line-height: 1.1;
+	@include rounded(5px);
+	&:hover {
+		text-decoration: none;
+	}
+  &:disabled{
+    @include border($color18);
+    color:$color18;
+    opacity:1;
+    @include button-bg($color21,$color21);
+  }
+  &:focus{      
+  box-shadow: none;
+  }
+  &.icon{
+    &:after{
+      content: "";
+      width: 1vw;
+      height: 1vw;
+      display: inline-block;
+      vertical-align: bottom;
+      margin-left: 0.53vw;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+@mixin dialogButton() {
+  border: 1px solid $color16;
+  border-radius: 5px;
+  background-color: $white;
+  color: $color16;
+  opacity: 1;
+  letter-spacing: 0px;
+  font-size: 0.8vw;
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 20px;
+  &:after {
+    content: "";
+    height: 80%;
+    width: 20%;
+    background-repeat: no-repeat;
+    background-size: 60% 100%;
+  }
+  &:disabled {
+    background-color: $number_Plate_asdrn_button;
+  }
+}
+@mixin dashboardTabButton() {
+  border: 0;
+  opacity: 1;
+  border-left: 2px solid $color21;
+  color: $color18;
+  background: $white;
+  position: relative;
+  cursor: pointer;
+  line-height: 1;
+  font-size: .94vw;
+  padding: .77vw;
+  display: flex;
+  align-items: center;
+  &:hover {
+    background: $color23;
+    color: $white;
+    border-color: $color23;
+  }
+  &:after {
+    content: "";
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-size: 100%;
+    background-position: center center;
+    vertical-align: middle;
+    margin-left: .77vw;
+    width: 1.2vw;
+    height: 1.2vw;
+  }
+}
+@mixin errorMessage() {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  font-family: Fira Sans;
+  border-radius: 5px;
+  background: $white;
+  box-shadow: 0px 3px 6px $color18;
+  font-size: 0.84vw;
+  color: $color18;
+  line-height: 1vw;
+  padding: 5px 20px 5px 1.85vw;
+  cursor: pointer;
+  direction: ltr;
+  position: relative;
+  min-height: 3vw;
+  > span {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  &:before {
+    content: "";
+    display: block;
+    height: 1vw;
+    width: 1vw;
+    position: absolute;
+    left: 0.55vw;
+    top: 50%;
+    margin-top: -0.5vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@mixin errorMessageDanger() {
+  border: 2px solid $errorDanger;
+  &:before {
+    background-image: $error_danger_image;
+  }
+}
+@mixin errorMessageSuccess() {
+  border: 2px solid $errorSuccess;
+  &:before {
+    background-image: $error_succes_image;
+  }
+}
+@mixin errorMessageInfo() {
+  border: 2px solid $errorInfo;
+  &:before {
+    height: 1.5vw;
+    width: 1.5vw;
+    left: 0.3vw;
+    margin-top: -0.7vw;
+    background-image: $error_info_image;
+  }
+}
+@mixin closeIcon() {
+  position: absolute;
+  top: 50%;
+  right: 0.5vw;
+  z-index: 9;
+  font-weight: 200;
+  font-size: 2vw;
+  color: $color18;
+  opacity: 0.8;
+  font-family: "Fira Sans";
+  text-shadow: none;
+  line-height: 1vw;
+  margin-top: -0.5vw;
+  &:hover {
+    opacity: 1;
+  }
+}
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin navigationTab() {
+  background: $color9;
+  text-transform: uppercase;
+  .nav-link {
+    margin-bottom: -1px;
+    padding: 1.5% 1.5%;
+    border-top: 0px;
+    border-right: 1px solid $color21;
+    border-bottom: 2px solid $color16 !important;
+    border-left: 1px solid $color21;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+
+    color: $color16;
+    border-radius: 0px;
+    &:hover,
+    &:focus {
+      border-color: $color21 $color21 $color16;
+      background: $white;
+    }
+    &.show {
+      &.active {
+        color: $white;
+        background-color: $color16;
+        border-color: $color16 $color16 $color16;
+      }
+    }
+    &:disabled {
+      color: $color15;
+      background-color: transparent;
+      border-color: transparent;
+    }
+    &.active {
+      color: $white !important;
+      background-color: $color16 !important;
+      border-color: $color16 $color16 $color16 !important;
+    }
+  }
+}

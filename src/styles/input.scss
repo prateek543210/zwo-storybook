@@ -1,0 +1,57 @@
+@import "./variables";
+@import "./mixins";
+.field-input {
+    border: 2px solid $text-color;
+    background: $input-color;
+    @include rounded(5px);
+    color: $color18;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 0.52vw;
+    font-size: 0.84vw;
+    font-family: "Fira Sans";
+    padding: 0.5vw;
+    height: auto;
+    line-height: 1;
+    &:focus {
+        color: $color18;
+        border-color: $text-color;
+        background: $input-color;
+        @include box-shadow(0px, 0px, 0px, 0px, $white);
+    }
+    &[readonly],
+    &:disabled {
+        background-color: $color21;
+        opacity: 1;
+        border-color: $color21;
+    }
+    option {
+        background: $input-color;
+        padding: 0.5vw;
+        margin-bottom: 0.26vw;
+    }
+}
+.field-error-input {
+    background-color: $color26 !important;
+    border-color: $red !important;
+}
+.field-label,
+.form-label,
+.form-check-label {
+    font-size: 0.84vw;
+    font-family: "Fira Sans";
+    line-height: 1;
+    margin-bottom: 0.52vw;
+    color: $color23;
+    > span {
+        color: $color18;
+        margin-left: 5px;
+    }
+}
+.field-group {
+    margin-bottom: 0.78vw;
+}
+.form-check {
+    margin-bottom: 0.52vw;
+}

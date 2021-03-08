@@ -1,0 +1,107 @@
+
+@import "./variables";
+@import "./mixins";
+.btn{
+    @include button;
+}
+.btn-primary-dc{
+    @include border($color23);
+    @include button-bg($color23,$color33);
+    color:$white;
+    &:not(:disabled):hover{
+        color:$color23;
+
+    }
+    // &.icon-weiter-logo{
+    //     &:after{
+    //         background-image: $weiterleteim_logo_white;
+    //     }
+    //     &:not(:disabled):hover{
+    //         &:after{
+    //             background-image: $weiterleteim_logo_blue;
+    //         }  
+    //     }
+    //     &:disabled{
+    //         &:after{
+    //             background-image: $weiterleteim_logo_grey;
+    //         }
+    //     }
+    // }
+    // &.icon-status-request{
+    //     &:after{
+    //         background-image: $refresh_button_image;
+    //     }
+    //     &:not(:disabled):hover{
+    //         &:after {
+    //         background-image: $refresh_button_hover_image;
+    //         }  
+    //     }
+    // }
+    a {
+        color: $color18;
+        text-decoration: none;
+        padding: 0;  
+    }
+
+}
+.btn-secondary-dc{
+    @include border($color23);
+    @include button-bg(transparent,$color33);
+    color: $color18;
+    &:not(:disabled):hover{
+        color:$color23;
+        a{
+            color:$color23;
+        }
+    }
+    // &.icon-status-request{
+    //     &:after{
+    //         background-image: $refresh_button_grey_image;
+    //     }
+    //     &:not(:disabled):hover{
+    //         &:after {
+    //         background-image: $refresh_button_hover_image;
+    //         }  
+    //     }
+    // }
+    // &.icon-download{
+    //     &:after{
+    //         background-image: $excel_download_button_grey_image;
+    //     }
+    //     &:not(:disabled):hover{
+    //         &:after{
+    //             background-image: $excel_download_button_image;
+    //         }  
+    //     }
+    // }
+    // &.icon-aussondern-logo{
+    //     &:not(:disabled):hover{
+    //         &:after{
+    //             background-image: $Aussondern-logo;
+    //         }  
+    //     }
+    //     &:after{
+    //         background-image:$Aussondern_logo_grey;
+    //     }
+    //     &:disabled{
+    //         &:after{
+    //             background-image: $Aussondern_logo_grey;
+    //         }
+    //     } 
+    // }
+    a {
+        color: $color18;
+        text-decoration: none;
+        padding: 0;  
+    }
+    // &.icon-file-upload{
+    //     &:after{
+    //         background-image: $file_upload_grey_icon;
+    //     }
+    //     &:not(:disabled):hover{
+    //         &:after {
+    //         background-image: $file_upload_green_icon;
+    //         }  
+    //     }
+    // }
+}
